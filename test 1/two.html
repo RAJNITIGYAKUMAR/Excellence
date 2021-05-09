@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <title>Question 2</title>
+       
+    </head>
+    <body>
+       <h4>Print maximum consicutive 1 number only in given array</h4>
+        <script>
+            var nums=[0,1,0,0,1,0,1,0,1,0,1,1,1,0,1,1,1,1,,1];
+            findMaxOnes();
+            function findMaxOnes() {
+                    let maxCount = 0;
+                    let currentCount = 0;
+                    for (let i = 0; i<nums.length; i++) {
+                        if (nums[i] === 0) {
+                            currentCount = 0;
+                        } else {
+                            currentCount++;
+                        };
+                        if (currentCount > maxCount) 
+                            maxCount = currentCount;
+                    };
+                    document.write(maxCount);
+                };
+        </script>
+    </body>
+</html>

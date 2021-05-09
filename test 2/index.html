@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Todo List</title>
+</head>
+<body>
+
+<div class="header">
+  <h2>My To Do List</h2>
+    <form name="todoform">
+        <label>Name</label><br>
+        <input type="text" name="name" id="name" placeholder="enter your name"/>
+        <br><br>
+        <button type="button" onclick="add()">Submit</button>
+    </form>
+</div>
+
+<ul id="mylist">
+  <li>Rajnitigya</li>
+</ul>
+
+<script>
+  function add() {
+      validate();
+  let li = document.createElement('LI');
+  let input_value = document.todoform.name.value;
+  let input_text = document.createTextNode(input_value);
+
+  li.appendChild(input_text);
+  document.querySelector('ul').appendChild(li);
+  document.todoform.name.value = "";
+
+
+}
+    function validate() {
+      
+         if( document.todoform.name.value == "" ) {
+            alert( "Please enter name!" );
+            document.todoform.name.focus() ;
+            return false;
+         }
+            
+         
+      }
+</script>
+
+</body>
+</html>
